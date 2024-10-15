@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:myapp/app/controllers/home_controller.dart';
 import 'package:myapp/app/views/views/foods/food_view.dart';
 
-class HomeView extends GetView {
+class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
   @override
   Widget build(BuildContext context) {
+    final HomeController controller = Get.put(HomeController());
     return Scaffold(
       appBar: AppBar(
         title: Padding(
@@ -145,23 +147,28 @@ class HomeView extends GetView {
                   ),
                   Column(
                     children: [
-                      Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.green[200],
-                        ),
-                        child: Image.asset(
-                          "assets/images/resep.png",
-                          fit: BoxFit.contain,
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed('/list-medicine');
+                        },
+                        child: Container(
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.green[200],
+                          ),
+                          child: Image.asset(
+                            "assets/images/medicine.webp",
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                       SizedBox(
                         height: 10,
                       ),
                       Text(
-                        "Resep",
+                        "Pengingat Obat",
                         style: TextStyle(color: Colors.green),
                       ),
                     ],
@@ -324,9 +331,18 @@ class HomeView extends GetView {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.toNamed('/add-schedule');
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
