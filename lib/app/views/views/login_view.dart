@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp/app/controllers/login_controller.dart';
 
-class LoginView extends GetView {
+class LoginView extends GetView<LoginController> {
   const LoginView({super.key});
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class LoginView extends GetView {
                   ),
                   Expanded(
                     child: TextField(
-                      onChanged: (value) => loginController.email.value = value,
+                      controller: loginController.emailController,
                       decoration: InputDecoration(
                           hintText: "Email",
                           border: UnderlineInputBorder(
@@ -69,8 +69,7 @@ class LoginView extends GetView {
                   ),
                   Expanded(
                     child: TextField(
-                      onChanged: (value) =>
-                          loginController.password.value = value,
+                      controller: loginController.passwordController,
                       decoration: InputDecoration(
                           suffixIcon: Icon(
                             Icons.visibility_off_outlined,
@@ -104,7 +103,10 @@ class LoginView extends GetView {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    loginController.login();
+                    loginController.login(
+                      loginController.emailController.text,
+                      loginController.passwordController.text,
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
