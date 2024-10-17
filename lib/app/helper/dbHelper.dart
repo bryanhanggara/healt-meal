@@ -44,7 +44,7 @@ class Dbhelper {
   CREATE TABLE $NotificationTable (
     $columnIdNotification INTEGER PRIMARY KEY AUTOINCREMENT,
     $columnIdMedicine INTEGER NOT NULL,
-    $columnTime TEXT NOT NULL,
+    $columnTime String NOT NULL,
     FOREIGN KEY ($columnIdMedicine) REFERENCES $MedicineTable ($columnId)
   )
 ''');

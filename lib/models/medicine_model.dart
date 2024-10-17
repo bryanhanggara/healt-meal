@@ -1,12 +1,12 @@
 class Medicine {
   final int? id;
-  final String? name;
-  final int? frequency;
+  final String name;
+  final int frequency;
 
   Medicine({
     this.id,
-    this.name,
-    this.frequency
+    required this.name,
+    required this.frequency
   });
 
   Map<String, dynamic> toJson(){

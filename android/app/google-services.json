@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "233473959259",
+    "project_id": "healt-meal",
+    "storage_bucket": "healt-meal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233473959259:android:6ebe374b361468cd88e67e",
+        "android_client_info": {
+          "package_name": "healthmeal.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkGuhNJ3qRBuJn_VejtUX3wBdTM9OjHpE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
