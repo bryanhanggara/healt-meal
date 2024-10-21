@@ -6,11 +6,14 @@ import 'package:myapp/app/controllers/login_controller.dart';
 import 'package:myapp/app/views/views/loading/loading_view.dart';
 import 'package:myapp/routes/app_route.dart';
 import 'package:timezone/data/latest.dart' as tz;
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(const MyApp());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {

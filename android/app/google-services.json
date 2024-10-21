@@ -1,21 +1,40 @@
 {
   "project_info": {
-    "project_number": "233473959259",
-    "project_id": "healt-meal",
-    "storage_bucket": "healt-meal.appspot.com"
+    "project_number": "949608304749",
+    "project_id": "helthy-life-6db4b",
+    "storage_bucket": "helthy-life-6db4b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:233473959259:android:6ebe374b361468cd88e67e",
+        "mobilesdk_app_id": "1:949608304749:android:8bf899e91d8f7c328c6f64",
         "android_client_info": {
-          "package_name": "healthmeal.com"
+          "package_name": "com.lx.firebase_application"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDkGuhNJ3qRBuJn_VejtUX3wBdTM9OjHpE"
+          "current_key": "AIzaSyA9FWTb2DyfpJX12waA1JQk4M8g9DtINbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949608304749:android:7612cfed27e8eab38c6f64",
+        "android_client_info": {
+          "package_name": "com.package"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9FWTb2DyfpJX12waA1JQk4M8g9DtINbE"
         }
       ],
       "services": {
