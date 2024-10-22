@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:myapp/app/controllers/register_controller.dart';
 
-class RegisterView extends GetView {
+class RegisterView extends GetView<RegisterController> {
   const RegisterView({super.key});
   @override
   Widget build(BuildContext context) {
-    var loginController;
+    final RegisterController registerController = Get.find();
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(35),
@@ -46,7 +47,7 @@ class RegisterView extends GetView {
                   ),
                   Expanded(
                     child: TextField(
-                      onChanged: (value) => loginController.email.value = value,
+                      controller: registerController.emailController,
                       decoration: InputDecoration(
                           hintText: "Email",
                           border: UnderlineInputBorder(
@@ -68,8 +69,7 @@ class RegisterView extends GetView {
                   ),
                   Expanded(
                     child: TextField(
-                      onChanged: (value) =>
-                          loginController.password.value = value,
+                      controller: registerController.passwordController,
                       decoration: InputDecoration(
                           suffixIcon: Icon(
                             Icons.visibility_off_outlined,
@@ -103,7 +103,10 @@ class RegisterView extends GetView {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    loginController.login();
+                    registerController.register(
+                      registerController.emailController.text,
+                      registerController.passwordController.text,
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,

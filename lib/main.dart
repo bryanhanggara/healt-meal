@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
                 displayColor: Colors.black,
               ),
             ),
-            initialRoute: AppRoute.login,
+            initialRoute: snapshot.data != null ? AppRoute.home : AppRoute.login,
             getPages: AppRoute.routes,
           );
         }

@@ -42,10 +42,14 @@ class HomeView extends GetView<HomeController> {
         actions: [
           ClipRRect(
             borderRadius: BorderRadius.circular(50),
-            child: Image.asset(
-              "assets/images/avata.png",
-              height: 80,
-              width: 80,
+            child: IconButton(
+              onPressed: () {
+                controller.logout();
+              },
+              icon: Icon(
+                Icons.logout_outlined,
+                size: 30,
+              ),
             ),
           ),
         ],
